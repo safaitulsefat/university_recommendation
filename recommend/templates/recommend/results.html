@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>University Recommendation Results</title>
+</head>
+<body>
+    <h1>Recommended Universities</h1>
+    {% if message %}
+        <p>{{ message }}</p>
+    {% else %}
+        <table>
+            <tr>
+                <th>University</th>
+                <th>Rank</th>
+                <th>Cost</th>
+                <th>Minimum GPA</th>
+            </tr>
+            {% for university in universities %}
+                <tr>
+                    <td>{{ university.university }}</td>
+                    <td>{{ university.rank }}</td>
+                    <td>{{ university.cost }}</td>
+                    <td>{{ university.minimum_gpa }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+</body>
+</html>
