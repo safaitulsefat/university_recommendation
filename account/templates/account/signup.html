@@ -1,0 +1,28 @@
+{% extends 'recommend/base.html' %}
+
+{% block content %}
+
+    {% if messages %}
+    {% for m in messages %}
+    <small>{{m}}</small>
+    {% endfor %}
+    {% endif %}
+   
+    {% load crispy_forms_tags %}
+    <form  method="post" style="width: 50%; margin: auto;" novalidate>
+    <!--{{form|crispy}}-->
+    {% csrf_token %}
+    {% for i in form %}
+      {{i.label_tag}}
+      {{i}}
+      {{i.errors|striptags}}
+    {% endfor %}
+    <button class="btn btn-primary" type="submit">submit</button>
+    <small>if already have a account <a href="{% url 'loginpage' %}">login</a></small>
+    </form>
+   
+    {% endblock %}
+    
+    
+
+    

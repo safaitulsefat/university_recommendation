@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>University Recommendation Results</title>
-</head>
-<body>
+{% extends 'recommend/base.html' %}
+{% block content %}
+
+
     <h1>Recommended Universities</h1>
     {% if message %}
         <p>{{ message }}</p>
@@ -25,5 +23,6 @@
             {% endfor %}
         </table>
     {% endif %}
-</body>
-</html>
+    
+
+    {% endblock %}
